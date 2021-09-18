@@ -1,0 +1,12 @@
+port: /dev/ttyUSB0
+read_rate: 15
+write_rate: 25
+joints: {
+    neck_pan: {id: 1},
+    neck_tilt1: {id: 2},
+    neck_tilt2: {id: 3},
+    right_eye_pan: {id: 4},
+    right_eye_tilt: {id: 5, invert: true},
+    left_eye_pan: {id: 6},
+    left_eye_tilt: {id: 7, invert: true}
+}

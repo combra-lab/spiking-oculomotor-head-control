@@ -1,0 +1,8 @@
+<launch>
+  <node name="arbotix_head" ns="full_head" pkg="arbotix_python" type="arbotix_driver" output="screen">
+    <rosparam file="$(find arbotix_head)/config/test.yaml" command="load" />
+  </node>
+  <node name="arbotix_laser" ns="laser" pkg="arbotix_python" type="arbotix_driver" output="screen">
+    <rosparam file="$(find arbotix_head)/config/test_laser.yaml" command="load" />
+  </node>
+</launch>

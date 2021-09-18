@@ -1,0 +1,7 @@
+port: /dev/ttyUSB1
+read_rate: 15
+write_rate: 25
+joints: {
+    laser_pan: {id: 8},
+    laser_tilt: {id: 9}
+}

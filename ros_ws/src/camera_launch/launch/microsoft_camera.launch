@@ -1,0 +1,36 @@
+<launch>
+  <node name="left_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video1" />
+    <param name="image_width" value="1280" />
+    <param name="image_height" value="720" />
+    <param name="pixel_format" value="mjpeg" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+    <param name="autofocus" value="true" />
+  </node>
+  <node name="right_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video2" />
+    <param name="image_width" value="1280" />
+    <param name="image_height" value="720" />
+    <param name="pixel_format" value="mjpeg" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+    <param name="autofocus" value="true" />
+  </node>
+  
+  <node pkg="eye_process" name="left_eye" type="vision_node_center.py" output="screen">
+    <param name="camera_name" value="left_cam" />
+    <param name="left_right" value="0" />
+    <param name="red_threshold" value="250" />
+    <param name="receptive_file_dir" value="$(find eye_process)/json/receptive_field.json" />
+    <param name="pub_freq" value="20" />
+  </node>
+
+   <node pkg="eye_process" name="right_eye" type="vision_node_center.py" output="screen">
+    <param name="camera_name" value="right_cam" />
+    <param name="left_right" value="1" />
+    <param name="red_threshold" value="250" />
+    <param name="receptive_file_dir" value="$(find eye_process)/json/receptive_field.json" />
+    <param name="pub_freq" value="20" />
+  </node>
+</launch>
