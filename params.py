@@ -9,13 +9,13 @@ cfg['laser']['chirp_decrease_rate'] = 1.2  # only used for chirp exp
 
 # Head Control options
 cfg['head'] = dict()
-cfg['head']['eye_pan_inc'] = 0.0003
+cfg['head']['eye_pan_inc'] = 0.0004
 cfg['head']['eye_pan_lim'] = 1.0
-cfg['head']['eye_tilt_inc'] = 0.0003
+cfg['head']['eye_tilt_inc'] = 0.0004
 cfg['head']['eye_tilt_lim'] = 1.0
-cfg['head']['neck_pan_inc'] = 0.0003
+cfg['head']['neck_pan_inc'] = 0.0004
 cfg['head']['neck_pan_lim'] = 1.0
-cfg['head']['neck_tilt_inc'] = 0.0003
+cfg['head']['neck_tilt_inc'] = 0.0004
 cfg['head']['neck_tilt_lim'] = 0.5
 cfg['head']['servo_move_spd'] = 2.0
 cfg['head']['input_amp'] = 100

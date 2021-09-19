@@ -2,7 +2,7 @@ import numpy as np
 import nxsdk.api.n2a as nx
 from nxsdk.graph.processes.phase_enums import Phase
 import os
-from oculumotor_snn.head_snn import RobotHeadNet
+from snn_loihi.oculumotor_snn import RobotHeadNet
 
 
 def setup_full_head_snn():

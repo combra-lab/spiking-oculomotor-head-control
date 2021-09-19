@@ -380,10 +380,11 @@ class HeadExperimentTFTree:
 
 
 if __name__ == '__main__':
-    ros_ita_num = 20 * 30
+    ros_ita_num = 20 * 50
     ros_node = HeadExperimentTFTree()
     laser_list, left_list, right_list = ros_node.run(ros_ita_num)
 
     import pickle
-    with open('../../../../exp_results/loihi_step_exp.p', 'wb+') as fw:
+    import os
+    with open(os.getcwd() + '/exp_results/loihi_step_exp.p', 'wb+') as fw:
         pickle.dump([laser_list, left_list, right_list], fw)

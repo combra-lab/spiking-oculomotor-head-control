@@ -172,7 +172,7 @@ class HeadRosControl:
 
 if __name__ == '__main__':
     from snn_loihi.setup_loihi_snn import setup_full_head_snn, compile_single_joint_head_snn
-    from param import cfg
+    from params import cfg
 
     eye_pan_inc = cfg['head']['eye_pan_inc']
     eye_pan_lim = cfg['head']['eye_pan_lim']
