@@ -24,19 +24,19 @@ If you are interested in deploying the trained SNN on Loihi, please contact the 
 
 #### 2. Setup Interaction Between ROS and ArbotiX-M
 
-We use ROS as the middleware to control the biomimetic robotic head. To setup the interaction between ROS and the ArbotiX-M robocontroller, we first need to install the arbotix ROS packages from the repository. Please check this [link](http://wiki.ros.org/arbotix_python) on how to interact the Dynamixel servos using the `arbotix_python` package.
+We use ROS as the middleware to control the biomimetic robotic head. To setup the interaction between ROS and the ArbotiX-M robocontroller, we first need to install the arbotix ROS packages from the repository. Please check this [link](http://wiki.ros.org/arbotix_python) on how to interact with the Dynamixel servos using the `arbotix_python` package.
 
 ```
 sudo apt-get install ros-kinetic-arbotix
 ```
 
-Next, we need to setup ROS on the ArbotiX-M robocontroller. To program the ArbotiX-M, you can follow the [guide](https://learn.trossenrobotics.com/arbotix/7-arbotix-quick-start-guide) from Trossen Robotics. After setup the ArbotiX-M robocontroller, open and upload the following sketch in the arbotix library files:
+Next, we need to setup ROS on the ArbotiX-M robocontroller. To program the ArbotiX-M, you can follow the [guide](https://learn.trossenrobotics.com/arbotix/7-arbotix-quick-start-guide) from Trossen Robotics. After setting up the ArbotiX-M robocontroller, open and upload the following sketch in the arbotix library files:
 
 ```
 File -> Sketchbook -> ArbotiX Sketches -> ros
 ```
 
-After correctly setup the software requirements on both the Ubuntu host computer and the ArbotiX-M robocontroller, we connect ArbotiX-M with the host computer using the FTDI-USB cable. To give access to the ROS node, you may need to run (`ttyUSB0` for the robotic head, `ttyUSB1` for the laser pointer):
+After correctly setting up the software requirements on both the Ubuntu host computer and the ArbotiX-M robocontroller, we connect ArbotiX-M to the host computer using the FTDI-USB cable. To give access to the ROS node, you may need to run (`ttyUSB0` for the robotic head, `ttyUSB1` for the laser pointer):
 
 ```
 sudo chmod 666 /dev/ttyUSB0
@@ -55,33 +55,33 @@ We will have a successful setup if no error is reported.
 ## Example Usage
 
 
-#### 1. Bringup Robots and Cameras
+#### 1. Bring up Robots and Cameras
 
-We need to first bring up the biomimetic robotic head and the laser pointer after they are connected with the host computer using the FTDI-USB cables. To bringup both robots, you need to first launch the ROS nodes for arbotix interaction:
+We need to first bring up the biomimetic robotic head and the laser pointer after they are connected with the host computer using the FTDI-USB cables. To bring up both robots, you need to first launch the ROS nodes for arbotix interaction:
 
 ```
 roslaunch arbotix_head run_arbotix.launch
 ```
 
-Then, set the robotic head to its init position by executing the following command in a new terminal session (after the head init completed, use Ctrl-C to stop the program):
+Then, set the robotic head to its initial position by executing the following command in a new terminal session (after the head initialization is completed, use Ctrl-C to stop the program):
 
 ```
 rosrun arbotix_head head_init.py
 ```
 
-Use the same way to set the laser pointer to its init position:
+Use the same way to set the laser pointer to its initial position:
 
 ```
 rosrun arbotix_head laser_pointer_init.py
 ```
 
-Now we have correctly bringup the robots. Next, we need to bring up the two cameras after then are connected with the host computer using USB cables. To bringup the cameras, you need to launch the ROS nodes for camera video streams and visual input processing in a new terminal session:
+Now we have correctly brought up the robots. Next, we need to bring up the two cameras after they are connected with the host computer using USB cables. To bring up the cameras, you need to launch the ROS nodes for camera video streams and visual input processing in a new terminal session:
 
 ```
 roslaunch camera_launch microsoft_camera.launch
 ```
 
-This launch file will simultaneously bringup both the left and the right camera. This will also automatically activates the visual input processing for both cameras with active receptive fields of both eyes animated.
+This launch file will simultaneously bring up both the left and the right camera. This will also automatically activate the visual input processing for both cameras, and display the active receptive fields of both eyes.
 
 
 #### 2. Run Experiments using SNN on Loihi
@@ -92,19 +92,19 @@ To control the robotic head, we first deploy the SNN on Loihi and generate contr
 python head_control.py
 ```
 
-Then activate the automatic laser pointer control by running the following code in a new terminal session:
+Then we activate the automatic laser pointer control by running the following code in a new terminal session:
 
 ```
 python laser_pointer_control.py
 ```
 
-We designed three different experiments: step response experiment, chirp experiment, and circular experiment. You need to change the parameters in `params.py` to run different experiments. For example, you can change this parameter to run different experiment:
+We designed three different experiments: step response experiment, chirp experiment, and circular experiment. You need to change the parameters in `params.py` to run different experiments. For example, you can change this parameter to run different experiments:
 
 ```
 cfg['laser']['exp'] = 'step'  # step, circle, or chirp
 ```
 
-For the chip and circular experiments, you can also change the parameters to perform different frequencies.
+For the chirp and circular experiments, you can also change the parameters to perform the experiments with different frequencies.
 
 
 #### 3. Record Experiments and Analyze Results
