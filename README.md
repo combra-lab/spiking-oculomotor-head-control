@@ -5,6 +5,8 @@ This package is the Python and ROS implementation of a spiking neural network on
 
 ## Hardware Design
 
+![](hardware_setup.png "hardware and experiment design")
+
 
 ## Software Installation
 
@@ -18,8 +20,8 @@ This package is the Python and ROS implementation of a spiking neural network on
 
 ROS Kinetic is not compatible with Python 3 by default, if you have issues with using Python 3 with ROS, please follow this [link](https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674) to resolve them. We use the default Python 2 environment to execute `roslaunch` and `rosrun`.
 
-Intel's neuromorphic library NxSDK is only required for SNN deployment on Loihi. 
-If you are interested in deploying the trained SNN on Loihi, please contact the [Intel Neuromorphic Lab](https://www.intel.com/content/www/us/en/research/neuromorphic-community.html).
+Intel's neuromorphic library NxSDK is required for SNN deployment on Loihi. 
+If you are interested in deploying SNNs on Loihi, please contact the [Intel Neuromorphic Lab](https://www.intel.com/content/www/us/en/research/neuromorphic-community.html).
 
 
 #### 2. Setup Interaction Between ROS and ArbotiX-M
