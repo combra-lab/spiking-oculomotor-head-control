@@ -2,6 +2,21 @@
 
 This package is the Python and ROS implementation of a spiking neural network on Intel's Loihi neuromorphic processor mimicking the oculomotor system to control a biomimetic robotic head.
 
+The paper will be published by IEEE Transactions on Medical Robotics and Bionics (TMRB) in 2022. The Early Access verion is available [here](https://ieeexplore.ieee.org/document/9722907).
+
+## Citation
+
+Ioannis Polykretis, Guangzhi Tang, Praveenram Balachandar and Konstantinos P. Michmizos, **A Spiking Neural Network Mimics the Oculomotor System to Control a Biomimetic Robotic Head without Learning on a Neuromorphic Hardware**, in IEEE Transactions on Medical Robotics and Bionics, doi: 10.1109/TMRB.2022.3155278.
+
+```
+@ARTICLE{tmrb-polykretis-spiking,
+  author={Polykretis, Ioannis and Tang, Guangzhi and Balachandar, Praveenram and Michmizos, Konstantinos P.},
+  journal={IEEE Transactions on Medical Robotics and Bionics}, 
+  title={A Spiking Neural Network Mimics the Oculomotor System to Control a Biomimetic Robotic Head without Learning on a Neuromorphic Hardware}, 
+  year={2022},
+  pages={1-10},
+  doi={10.1109/TMRB.2022.3155278}}
+```
 
 ## Hardware Design
 
